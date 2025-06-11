@@ -1,4 +1,4 @@
-llm_name: Meta-Llama-3.1-8B-Instruct
+llm_name: Meta-Llama-3-8B-Instruct
 model_name: ${model.llm_name}+${model.vision.vision_name}
 
 trainer:

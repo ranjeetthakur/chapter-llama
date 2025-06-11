@@ -21,7 +21,7 @@ class CaptionSelection:
         subset_train: str = "s10k-2_train",
         data_flags: str = "default",
         prompt: str = "asr",
-        model: str = "Meta-Llama-3.1-8B-Instruct",
+        model: str = "Meta-Llama-3-8B-Instruct",
     ):
         assert isinstance(sampling_methods, (list, tuple))
         self.sampling_methods = sampling_methods
@@ -219,7 +219,7 @@ class ASRPreds:
         self,
         subset_train: str,
         base_dir: Path,
-        model: str = "Meta-Llama-3.1-8B-Instruct",
+        model: str = "Meta-Llama-3-8B-Instruct",
         prompt: str = "asr",
         data_flags: str = "default",
     ):

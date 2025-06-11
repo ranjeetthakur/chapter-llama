@@ -19,7 +19,7 @@ tokenizer = None
 current_peft_model = None
 inference_model = None
 
-LLAMA_CKPT_PATH = "meta-llama/Llama-3.1-8B-Instruct"
+LLAMA_CKPT_PATH = "meta-llama/Meta-Llama-3-8B-Instruct"
 
 
 def load_base_model():

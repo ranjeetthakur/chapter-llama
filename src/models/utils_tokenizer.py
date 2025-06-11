@@ -84,7 +84,7 @@ class Tokenizer:
     def __init__(
         self,
         base_dir="./",
-        ckpt_path="checkpoints/meta-llama/Meta-Llama-3.1-8B-Instruct/",
+        ckpt_path="checkpoints/meta-llama/Meta-Llama-3-8B-Instruct/",
     ):
         import os
 

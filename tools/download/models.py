@@ -43,7 +43,7 @@ def download_model(model_id_or_path, overwrite=False, local_dir=None):
 
 
 def download_base_model(
-    repo_id="meta-llama/Meta-Llama-3.1-8B-Instruct",
+    repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
     local_dir="./checkpoints/",
 ):
     """
