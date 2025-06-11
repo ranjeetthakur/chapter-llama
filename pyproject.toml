@@ -116,7 +116,7 @@ markers = [
   "slow: slow tests",
 ]
 minversion = "6.0"
-testpaths = "tests/"
+testpaths = ["tests"]
 
 [tool.coverage.report]
 exclude_lines = [

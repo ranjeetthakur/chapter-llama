@@ -105,11 +105,10 @@ python -m pip install -e ".[inference]"
 <details><summary><strong>Download models</strong></summary>
 &emsp; 
 
-The `Llama-3.1-8B-Instruct` model will be downloaded automatically from Hugging Face, 
-make sure you agree to the license terms [here](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
+The `Meta-Llama-3-8B-Instruct` model will be downloaded automatically from Hugging Face.
 If you already have it downloaded, please check the [`llama3.1_8B.yaml`](configs/model/llama3.1_8B.yaml) config file to specify the checkpoint path.
 
-We provide 3 LoRA parameter sets for Llama-3.1-8B-Instruct:
+We provide 3 LoRA parameter sets for Meta-Llama-3-8B-Instruct:
 - `asr-10k`: Model trained with ASR from 10k videos of the VidChapters-7M dataset. Used for our Speech-based frame selector.
 - `captions_asr-10k`: Model trained with Captions+ASR from 10k videos of the VidChapters-7M dataset. Used for most of our experiments.
 - `captions_asr-1k`: Model trained with Captions+ASR from 1k videos of the VidChapters-7M dataset. Used for the full test set.
@@ -297,7 +296,7 @@ python tools/results/evaluate_results.py path/to/experiment/test_dir --subset su
 
 For example:
 ```bash
-python tools/results/evaluate_results.py outputs/chapterize/Meta-Llama-3.1-8B-Instruct/captions_asr/asr_s10k-2_train_preds+no-asr-10s/sml1k_train/default/test/
+python tools/results/evaluate_results.py outputs/chapterize/Meta-Llama-3-8B-Instruct/captions_asr/asr_s10k-2_train_preds+no-asr-10s/sml1k_train/default/test/
 ```
 
 Additionally, you can use the `tools/results/evaluate_results.ipynb` notebook to compare results from different video chapter generation experiments.

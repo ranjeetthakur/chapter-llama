@@ -336,7 +336,7 @@ def test_compute_metrics_captions():
 
     subset = "s100_val"
     chp = Chapters(vidc_dir="dataset/", subset=subset)
-    exp_dir = "outputs/chapterize/Meta-Llama-3.1-8B-Instruct/asr/titleFalse_summaryFalse/s1k_train/test"
+    exp_dir = "outputs/chapterize/Meta-Llama-3-8B-Instruct/asr/titleFalse_summaryFalse/s1k_train/test"
 
     metrics = MetricsExperiment(chp, exp_dir=exp_dir)
     results_captions = metrics.compute_metrics_captions(

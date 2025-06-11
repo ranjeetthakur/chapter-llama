@@ -122,7 +122,7 @@ if __name__ == "__main__":
     captions_dir = Path(
         "dataset/captions/HwwwH_MiniCPM-V-2/asr_s10k-2_train_preds+no-asr-10s/"
     )
-    ckpt_path = "checkpoints/meta-llama/Meta-Llama-3.1-8B-Instruct/"
+    ckpt_path = "checkpoints/meta-llama/Meta-Llama-3-8B-Instruct/"
     chapters = ChaptersCaptionsASR(captions_dir=captions_dir, subset="s1k_train")
     prompt = PromptCaptionsASRWindow(
         ckpt_path=ckpt_path, chapters=chapters, window_token_size=1200

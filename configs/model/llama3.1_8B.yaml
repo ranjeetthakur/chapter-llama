@@ -1,4 +1,4 @@
-model_name: Meta-Llama-3.1-8B-Instruct
+model_name: Meta-Llama-3-8B-Instruct
 
 trainer:
   _target_: src.models.llama_finetune.Trainer

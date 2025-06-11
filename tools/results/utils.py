@@ -33,7 +33,7 @@ def find_matching_paths(
     config_fix = config_fix or {}
     config_default = {
         "task_name": "chapterize",
-        "model_name": "Meta-Llama-3.1-8B-Instruct",
+        "model_name": "Meta-Llama-3-8B-Instruct",
         "prompt": "*",
         "data_flags": "*",
         "subset": "*",

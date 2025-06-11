@@ -10,7 +10,7 @@ from src.test.vidchapters import get_chapters
 from tools.download.models import download_model
 
 
-def main(video_path: Path, model: str = "asr-10k"):
+def main(video_path: Path, model: str = "asr-10k", use_peft: bool = True):
     single_video = SingleVideo(video_path)
     prompt = PromptASR(chapters=single_video)
 
@@ -19,9 +19,9 @@ def main(video_path: Path, model: str = "asr-10k"):
     transcript = single_video.get_asr(vid_id)
     prompt = prompt + transcript
 
-    model_path = download_model(model)
+    model_path = download_model(model) if model and use_peft else False
     inference = LlamaInference(
-        ckpt_path="meta-llama/Llama-3.1-8B-Instruct", peft_model=model_path
+        ckpt_path="meta-llama/Meta-Llama-3-8B-Instruct", peft_model=model_path
     )
 
     output_text, chapters = get_chapters(
@@ -56,13 +56,18 @@ def cli_entrypoint():
         default="asr-10k",
         help="Chapter-Llama model variant to use (e.g., asr-10k, captions_asr-10k).",
     )
+    parser.add_argument(
+        "--no-lora",
+        action="store_true",
+        help="Run without LoRA adapters (zero-shot).",
+    )
     args = parser.parse_args()
 
     if not args.video_path.exists():
         print(f"Error: Video file {args.video_path} not found")
         return
 
-    main(video_path=args.video_path, model=args.model)
+    main(video_path=args.video_path, model=args.model, use_peft=not args.no_lora)
 
 
 if __name__ == "__main__":
